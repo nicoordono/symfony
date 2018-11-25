@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% block title %}contact{% endblock %}
+  {{include('nav/nav.html.twig')}}
+<form action="" method="POST">
+<div>
+<label for="name" aria-labelledby="nom">nom : </label>
+<input type="text" id="name" name="nom" aria-required="true">
+</div>
+</form>
+{% endblock %}

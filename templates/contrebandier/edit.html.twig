@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Contrebandier{% endblock %}
+
+{% block body %}
+    <h1>Edit Contrebandier</h1>
+
+    {{ include('contrebandier/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('contrebandier_index') }}">back to list</a>
+
+    {{ include('contrebandier/_delete_form.html.twig') }}
+{% endblock %}

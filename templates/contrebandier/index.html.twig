@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contrebandier index{% endblock %}
+
+{% block body %}
+{% block nav%}{% include('nav/nav.html.twig')%}{% endblock %}
+    <h1>Contrebandier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Nationnalite</th>
+                <th>Age</th>
+                <th>Sexe</th>
+                <th>Metier</th>
+                <th>Complice</th>
+                <th>Nb</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contrebandier in contrebandiers %} 
+            <tr>
+                <td>{{ contrebandier.id }}</td>
+                <td>{{ contrebandier.nom }}</td>
+                <td>{{ contrebandier.prenom }}</td>
+                <td>{{ contrebandier.age }}</td>
+                <td>{{ contrebandier.sexe }}</td>
+                <td>{{ contrebandier.metier }}</td>
+                <td>{{ contrebandier.domicile }}</td>
+                <td>{{ contrebandier.complice }}</td>
+                <td>{{ contrebandier.nb }}</td>
+                <td>
+                    <a href="{{ path('contrebandier_show', {'id': contrebandier.id}) }}">show</a>
+                    <a href="{{ path('contrebandier_edit', {'id': contrebandier.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrebandier_new') }}">Create new</a>
+{% endblock %}

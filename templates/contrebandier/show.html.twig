@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contrebandier{% endblock %}
+
+{% block body %}
+    <h1>Contrebandier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrebandier.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ contrebandier.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ contrebandier.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nationnalite</th>
+                <td>{{ contrebandier.nationnalite }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ contrebandier.age }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ contrebandier.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Metier</th>
+                <td>{{ contrebandier.metier }}</td>
+            </tr>
+            <tr>
+                <th>Domicile</th>
+                <td>{{ contrebandier.domicile }}</td>
+            </tr>
+            <tr>
+                <th>Complice</th>
+                <td>{{ contrebandier.complice }}</td>
+            </tr>
+            <tr>
+                <th>Nb</th>
+                <td>{{ contrebandier.nb }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('contrebandier_index') }}">back to list</a>
+
+    <a href="{{ path('contrebandier_edit', {'id': contrebandier.id}) }}">edit</a>
+
+    {{ include('contrebandier/_delete_form.html.twig') }}
+{% endblock %}

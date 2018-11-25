@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Contrebandier{% endblock %}
+
+{% block body %}
+    <h1>Create new Contrebandier</h1>
+
+    {{ include('contrebandier/_form.html.twig') }}
+
+    <a href="{{ path('contrebandier_index') }}">back to list</a>
+{% endblock %}
